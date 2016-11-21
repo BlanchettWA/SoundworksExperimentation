@@ -1,7 +1,6 @@
 import * as soundworks from 'soundworks/client';
 import PlayerRenderer from './PlayerRenderer';
 
-// import audiofile from './audiofile';
 const audioContext = soundworks.audioContext;
 
 const viewTemplate = `

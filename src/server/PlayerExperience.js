@@ -31,28 +31,29 @@ export default class PlayerExperience extends Experience {
       //Import the Javascript OSC libraries as written here: https://github.com/TheAlphaNerd/node-osc
       var osc = require('node-osc');
 
+      //Listen for new OSC messages
       var oscServer = new osc.Server(57110, '127.0.0.1');
 
+      console.log('OSC Server created successfully!');
+
+      //Listen for new OSC messages, and display their parameters
       oscServer.on('message', function (msg, rinfo)
       {
         console.log('Got a message. Params are ' + msg + ' and ' + rinfo);
       });
 
-      this.broadcast(client,client,'tstmsg');
-      this.send(client,'tstmsg');
-
-
+//Recieve from a player that the srcreen has been Touched
+//Then tell the phone to play a sound!
     this.receive(client,'taptime', () =>
   {
+    console.log('player has tapped the screen');
     this.broadcast(client, client, 'tapplay');
     this.send(client,'tapplay');
   });
   }
 
-
-
-
   exit(client) {
+    //Play an exit sound, just for fun (and experimentation)
     this.broadcast(client, client, 'gameover');
     super.exit(client);
     // ...
