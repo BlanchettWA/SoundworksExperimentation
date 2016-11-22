@@ -1,11 +1,25 @@
 #(Modified) Soundworks Application
 
 
->The Soundworks framework is an amazing set of services and a great framework to build upon. This is an attempt to build upon that framework to create interesting experiences. 
+>The Soundworks framework is an amazing set of services and a great framework to build upon. This is an attempt to build upon that framework to create interesting experiences.
 > This is derived from the template for developing [*Soundworks*](https://github.com/collective-soundworks/soundworks/) applications.  
 > Most of the original template code is intact, including comprehensive comments in the source files.
 
 [//]: # (For a complete documentation of the *Soundworks* framework, please refer to http://collective-soundworks.github.io/soundworks/.)
+
+##Helpful Links and Resources
+
+https://libraries.io/github/collective-soundworks/soundworks
+This is an API of the Soundworks framework. I found it extremely helpful when debugging and trying to understand how things work
+
+https://github.com/collective-soundworks/soundworks-template
+This is the original Soundworks Template project that I forked off of. If anyone from [*collective-soundworks*](https://github.com/collective-soundworks) is reading this, I apologize for any random pull requests.
+
+https://github.com/TheAlphaNerd/node-osc
+This is the OSC Library that I imported and used for the facilitation of message recieving. Much thanks to [*TheAlphaNerd*](https://github.com/TheAlphaNerd))!
+
+
+
 
 ## Running the Application
 
@@ -16,57 +30,22 @@ $ npm install
 $ npm run watch
 ```
 
-If you succeeded to execute all commands without errors, you can start connecting clients - on a mobile phone or a browser simulating a mobile user agent and touch events - to the server.
+##Current Project Capabilities (And their purpose for existing)
+1. Play a snippet of Bird's Lament by Moondog when a client connects to the server
+>Exists to test changing sounds from the templete application and to create functions that will work in the framework
 
-## Helper Scripts
+2. Play the beginning of the Bird's Lament sample on all connected clients when any other client connects to the server
+>Exists to experiment with random function and time delay
 
-The template includes a set of scripts to support the development of an application.
-The scripts can be invoked through the `npm run` command:
- * `transpile` - creates an executable application from the ES2015 (ES6) sources
- * `start` - starts the application (i.e. its server).
- * `watch` - starts the server and watches the file system to do the necessary operations while developing
+3. Play a random note sample when clients tap their phone screen (Sounds taken from [*Drops*](https://github.com/collective-soundworks/soundworks-drops))
+>More extensive Random testing, creating custom send/recieve messages. Also adapting the touch capibilities of Drops into another program.
 
-```shell
-$ npm run transpile
-$ npm run start
-$ npm run watch
-```
+4. Play the Super Mario World Game Over theme when a client disconnects from the server on every other client.
+>Mostly for fun
 
-In detail, the `transpile` script implies the following operations:
- * *transpile* javascript source files from ES2015 to ES5
- * rebundle (i.e. *browserify*) the client Javascript (ES5) sources
- * recreate the *CSS* files from their *SASS* sources
+5. Play the Super Mario World Game Over theme when the server receieves an OSC message (currently on port 57110).
+>To extend capability with other programs or projects.
 
-The following operations may be performed by the `watch` script depending on the modification of source files:
- * recreate a *CSS* file when a corresponding *SASS* file in the `sass` directory is modified
- * re-*transpile* a modified server source file in the `src/server` directory
- * re-*transpile* and *browserify* a modified client source file in the `src/client` directory
- * re-*transpile* a modified source file used on both, client and server, in the `src/common` directory
 
-## Files and Directories
-
-The template consists of the following files and directories you should know about:
- * `bin` - the Node.js scripts *(no need to touch these)*
- * `public` - everything the clients need to run the application
-   * `fonts` - fonts used by the application template *(this is your directory)*
-   * `sounds` - sounds used by the application template *(this is your directory)*
-   * `js` - transpiled javascript files *(do not touch)*
-   * `css` - *CSS* stylesheets automatically created from *SASS* sources *(do not touch)*
-   * . . . add here the assets (images, movies, etc.) used by the clients of your application
- * `sass` - *SASS* stylesheet sources
-   * `main.scss` - includes all other *SASS* files in the directory *(the provided files are described in comments)*
-   * . . . add your styles here (as *SASS* files) and include them into the `main.scss` file
- * `src` - javascript (ES2015) sources *(this is all yours)*
-   * `client` - sources of the application's client side *(contains one directory per client type)*
-     * `player` - sources of the *player* client
-       * `index.js` - main file of the *player* client
-       * . . . files imported by the `index.js` main file
-   * `server` - sources of the application's server side
-     * `index.js` - server side main file *(for all client types)*
-     * . . . files imported by the `index.js` server side main file
- * `html` - template files to generate the application's `index.html` files *(no need to touch)*
- * `package.json` - NPM package file *(modify so that the description and dependencies match your application)*
- * `README.md` - this file *(that you should replace by a file that informs about your application)*
-
-This structure is required by the *Soundworks* framework and the helper scripts.
-The files that are part of the application's implementation (i.e. especially the files in the `src` directories) contain comprehensive explanatory comments.
+##Future Direction:
+Let it be a surprise and hang on for the ride. I'm going with the flow and learning as I go. 
