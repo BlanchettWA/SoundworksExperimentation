@@ -10,13 +10,13 @@
 ##Helpful Links and Resources
 
 https://libraries.io/github/collective-soundworks/soundworks
-This is an API of the Soundworks framework. I found it extremely helpful when debugging and trying to understand how things work
+>This is an API of the Soundworks framework. I found it extremely helpful when debugging and trying to understand how things work
 
 https://github.com/collective-soundworks/soundworks-template
-This is the original Soundworks Template project that I forked off of. If anyone from [*collective-soundworks*](https://github.com/collective-soundworks) is reading this, I apologize for any random pull requests.
+>This is the original Soundworks Template project that I forked off of. If anyone from [*collective-soundworks*](https://github.com/collective-soundworks) is reading this, I apologize for any random pull requests.
 
 https://github.com/TheAlphaNerd/node-osc
-This is the OSC Library that I imported and used for the facilitation of message recieving. Much thanks to [*TheAlphaNerd*](https://github.com/TheAlphaNerd))!
+>This is the OSC Library that I imported and used for the facilitation of message recieving. Much thanks to [*TheAlphaNerd*](https://github.com/TheAlphaNerd))!
 
 
 
@@ -48,4 +48,4 @@ $ npm run watch
 
 
 ##Future Direction:
-Let it be a surprise and hang on for the ride. I'm going with the flow and learning as I go. 
+Let it be a surprise and hang on for the ride. I'm going with the flow and learning as I go.
