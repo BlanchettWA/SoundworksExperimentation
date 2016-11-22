@@ -39,7 +39,7 @@ export default class PlayerExperience extends Experience {
 
         //Create a new instance of the PlayerExperience object so it can be used
         // to broadcast messages to clients.
-        var tesel = new PlayerExperience(playme);
+        var tesel = new PlayerExperience('player');
 
         tesel.broadcast(client,client,'gameover');
         tesel.send(client,'gameover');
