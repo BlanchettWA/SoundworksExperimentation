@@ -13,9 +13,6 @@ export default class PlayerExperience extends Experience {
 
   }
 
-  osci(client){
-    this.send(client, 'tstmsg');
-  }
 
   // if anything needs to append when the experience starts
   start() {}
@@ -37,9 +34,16 @@ export default class PlayerExperience extends Experience {
       console.log('OSC Server created successfully!');
 
       //Listen for new OSC messages, and display their parameters
-      oscServer.on('message', function (msg, rinfo)
-      {
-        console.log('Got a message. Params are ' + msg + ' and ' + rinfo);
+      oscServer.on('message', function(msg, rinfo) {
+        console.log('Check out what just came in:' + msg + ' and ' + rinfo);
+
+        //Create a new instance of the PlayerExperience object so it can be used
+        // to broadcast messages to clients.
+        var tesel = new PlayerExperience(playme);
+
+        tesel.broadcast(client,client,'gameover');
+        tesel.send(client,'gameover');
+        console.log('Client should be responding');
       });
 
 //Recieve from a player that the srcreen has been Touched
@@ -48,6 +52,7 @@ export default class PlayerExperience extends Experience {
   {
     console.log('player has tapped the screen');
     this.broadcast(client, client, 'tapplay');
+    console.log(client);
     this.send(client,'tapplay');
   });
   }
